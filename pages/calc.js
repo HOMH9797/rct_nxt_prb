@@ -5,7 +5,6 @@ export default () => (
     <div>
         <Header />
         <BarraTitulo />
-        <h3>Pagina de calculadora</h3>
         <div className="z-depth-2 lime darken-2 white-text center-align resultados">Area de resultados</div>
         <div style={{ textAlign: "center" }}>
             <a className="waves-effect lime darken-4  btn">0</a>
