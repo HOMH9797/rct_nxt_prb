@@ -12,7 +12,7 @@ export default () => (
         <style jsx global>
             {`
             body{
-                background:#a5d6a7
+                background:#dcedc8
             }
             `}
         </style>
