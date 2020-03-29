@@ -8,12 +8,14 @@ class Calculadora extends React.Component {
 
     onDigit = (digit) => {
         let arrOperacion = this.state.res.toString()
-        console.log(arrOperacion)
-        if (isNaN(digit)) {
-            arrOperacion = arrOperacion.split("")
-            let ultimoCaracterOperacion = arrOperacion[arrOperacion.length - 1]
+        arrOperacion = arrOperacion.split("")
+        let ultimoCaracterOperacion = arrOperacion[arrOperacion.length - 1]
 
-            if (ultimoCaracterOperacion !== digit && isNaN(ultimoCaracterOperacion)) {
+        if (isNaN(digit)) {
+
+            if (ultimoCaracterOperacion == digit) {
+
+            } else if (ultimoCaracterOperacion !== digit && isNaN(ultimoCaracterOperacion)) {
                 arrOperacion.pop()
                 arrOperacion.push(digit)
                 const expresion = arrOperacion.join("")
@@ -28,9 +30,13 @@ class Calculadora extends React.Component {
 
         }
         else if (!isNaN(digit)) {
-            const expresion = this.state.res + digit
+            if (arrOperacion.length == 1) {
+                this.setState({ res: digit })
+            } else {
+                const expresion = this.state.res + digit
+                this.setState({ res: expresion })
+            }
 
-            this.setState({ res: expresion })
         }
 
     }
